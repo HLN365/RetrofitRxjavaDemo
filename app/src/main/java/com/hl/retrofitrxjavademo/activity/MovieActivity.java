@@ -16,7 +16,7 @@ import com.hl.retrofitrxjavademo.rxhttp.BaseResponse;
 import com.hl.retrofitrxjavademo.rxhttp.HttpUtil;
 import com.hl.retrofitrxjavademo.rxhttp.RetrofitServiceManager;
 import com.hl.retrofitrxjavademo.rxhttp.RxObserver;
-import com.hl.retrofitrxjavademo.ui.adapter.CardViewtemDecortion;
+import com.hl.retrofitrxjavademo.ui.adapter.CardViewItemDecoration;
 import com.hl.retrofitrxjavademo.ui.adapter.MovieAdapter;
 
 import java.util.ArrayList;
@@ -95,10 +95,9 @@ public class MovieActivity extends Activity {
             }
         });
 
-
         mMovieAdapter = new MovieAdapter(this, mDatas);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mRecyclerView.addItemDecoration(new CardViewtemDecortion());
+        mRecyclerView.addItemDecoration(new CardViewItemDecoration());
         mRecyclerView.setAdapter(mMovieAdapter);
     }
 

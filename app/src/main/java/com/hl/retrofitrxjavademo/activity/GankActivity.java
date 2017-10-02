@@ -22,6 +22,7 @@ import dmax.dialog.SpotsDialog;
 import io.reactivex.functions.Consumer;
 
 /**
+ * 福利照片界面
  * Created by HL on 2017/9/14/0014.
  */
 
@@ -31,7 +32,6 @@ public class GankActivity extends Activity {
     private final static int STATE_REFRESH = 1;
     private final static int STATE_LOAD_MORE = 2;
     private int currentState = STATE_NORMAL;
-
 
     private RecyclerView mRecyclerView;
     private GankAdapter mGankAdapter;

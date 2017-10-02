@@ -1,12 +1,13 @@
 package com.hl.retrofitrxjavademo.ui.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.hl.retrofitrxjavademo.R;
+import com.hl.retrofitrxjavademo.activity.GankDetailActivity;
 import com.hl.retrofitrxjavademo.bean.Gank;
 import com.hl.retrofitrxjavademo.ui.holder.BaseViewHolder;
 
@@ -36,7 +37,9 @@ public class GankAdapter extends BaseAdapter<Gank, BaseViewHolder> implements Ba
 
     @Override
     public void onItemClick(View view, int position) {
-        Gank item = getItem(position);
-        Toast.makeText(mContext, item.desc, Toast.LENGTH_SHORT).show();
+        Gank gank = getItem(position);
+        Intent intent = new Intent(mContext, GankDetailActivity.class);
+        intent.putExtra("url", gank.url);
+        mContext.startActivity(intent);
     }
 }

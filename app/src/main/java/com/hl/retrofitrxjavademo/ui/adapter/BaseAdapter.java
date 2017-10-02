@@ -2,6 +2,7 @@ package com.hl.retrofitrxjavademo.ui.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -25,7 +26,8 @@ public abstract class BaseAdapter<T, H extends BaseViewHolder> extends RecyclerV
 
     @Override
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = View.inflate(mContext, mLayoutId, null);
+        //此处只能这样写，不然子View的宽度回不一致
+        View view = LayoutInflater.from(mContext).inflate(mLayoutId, parent, false);
         return new BaseViewHolder(view, mListener);
     }
 
@@ -130,6 +132,7 @@ public abstract class BaseAdapter<T, H extends BaseViewHolder> extends RecyclerV
      */
     public abstract void bindData(BaseViewHolder holder, T data);
 
+    //注意：该接口要为public
     public void setOnItemClickListener(OnItemClickListener listener) {
         mListener = listener;
     }
